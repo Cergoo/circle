@@ -1,0 +1,6 @@
+[book]
+authors = ["Cergoo"]
+language = "ru"
+multilingual = false
+src = "src"
+title = "Общая теория устройства и управления обществом"
