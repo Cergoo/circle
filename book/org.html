@@ -1,0 +1,218 @@
+<!DOCTYPE HTML>
+<html lang="ru" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Организации - Общая теория устройства и управления обществом</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="intro.html"><strong aria-hidden="true">1.</strong> Введение</a></li><li class="chapter-item expanded "><a href="base.html"><strong aria-hidden="true">2.</strong> Основные фигуры</a></li><li class="chapter-item expanded "><a href="sleap.html"><strong aria-hidden="true">3.</strong> Сон</a></li><li class="chapter-item expanded "><a href="org.html" class="active"><strong aria-hidden="true">4.</strong> Организации</a></li><li class="chapter-item expanded "><a href="lang.html"><strong aria-hidden="true">5.</strong> Язык ПОДА</a></li><li class="chapter-item expanded "><a href="death.html"><strong aria-hidden="true">6.</strong> Вас закодировали</a></li><li class="chapter-item expanded "><a href="family.html"><strong aria-hidden="true">7.</strong> Семья в рф</a></li><li class="chapter-item expanded "><a href="school.html"><strong aria-hidden="true">8.</strong> Средняя школа</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="after_school.html"><strong aria-hidden="true">8.1.</strong> После школы</a></li><li class="chapter-item expanded "><a href="control_school.html"><strong aria-hidden="true">8.2.</strong> Страшная контрольная</a></li></ol></li><li class="chapter-item expanded "><a href="in.html"><strong aria-hidden="true">9.</strong> Работа внутри страны</a></li><li class="chapter-item expanded "><a href="other.html"><strong aria-hidden="true">10.</strong> Россия и другие страны</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="b.html"><strong aria-hidden="true">10.1.</strong> Бiларусь</a></li><li class="chapter-item expanded "><a href="g.html"><strong aria-hidden="true">10.2.</strong> Германия</a></li><li class="chapter-item expanded "><a href="f.html"><strong aria-hidden="true">10.3.</strong> Франция</a></li><li class="chapter-item expanded "><a href="c.html"><strong aria-hidden="true">10.4.</strong> Китай</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Общая теория устройства и управления обществом</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h3 id="Организации"><a class="header" href="#Организации">Организации</a></h3>
+<p>Раз есть духовный мир значит вы там не одни и вы встречаетесь, сталкиваетесь и взаимодействуете с другими людьми если живёте духовной жизнью. Люди в духовном мире объединяются в организации. И вы можете состоять в одной либо нескольких организациях. Сам духовный мир неоднороден он иерархичен (имеет уровни) и вернандский его называл ноосферой. Где-то высоко в духовном мире на орбите над землёй висят пирамиды это станции, масоны тут не причем все байки про них это отвлекающий шум, кстати в россии есть свои массоны - российские, организация такая мерзопакостная. Кроме пирамид есть другие формы станций, но пирамиды одна из самых распространённых форм станций.</p>
+<p>В росии основная действующая духовная организация это ОБМАН, её прекрывает другая организация которая называется СИЛА И ВЛАСТЬ.</p>
+<p>Поэтому всё что говорят власти это обман, можете за высказываниями путина проследить - практически каждое его предложение - обман. Навальный стал работать против ОБМАНА, вскрывать некоторые ветки обмана и духовно зарабатывать на этом, пришла СИЛА И ВЛАСТЬ и прикрыла(в смысле зщиты) ОБМАН. Что стало с проектами &quot;Открытая Россия&quot;, &quot;Открытое общество&quot; - всё закрыли, всё засекретили, организацию навльного разогнали. ОБМАН процветает дальше.</p>
+<p>Итак - государство это группа лиц живущих духовной жизнью и управляющая всеми остальными проживающими на контролируемой территории и выступающими в качестве жертв.</p>
+<p>Все кто рождается на территории рф заносятся в списки небесной канцелярии государства, думаете там работают ангелы такие белые не там тёмные чекисты в кожанках в школе потом с ними встречаться будете, цифровой код имеют все, имя может получит только человек. В дальнейшем что бы получить право жить духовной жизнью а тем более восходить необходимо будет пройти два испытания(теста):</p>
+<ul>
+<li>тест на лояльность</li>
+<li>тест на преданность</li>
+</ul>
+<p>У кого-то слышал такое высказывание - Знаете что самого мерзкого было в ссср - его гимн, он такой возвышенный и... лживый в каждой строчке.</p>
+<p>Смотрели фильм &quot;Гостья из будущего&quot;? если да вы попали под программу геноцида. Этот фильм ловушка, его нельзя смотреть, создан организацией &quot;ПРЕКРАСНОЕ ДАЛЁКО&quot;, это жуткая организация они людей используют хуже чем животных на скотобойнях. Тех кого лишили светлого будущего попадают в &quot;ПРЕКРАСНОЕ ДАЛЁКО&quot;.</p>
+<p>Организация &quot;КРАСНЫЙ ТЕРОР&quot; была переименована в &quot;ТЯЖЁЛЫЕ ВРЕМЕНА&quot;.</p>
+<p>Есть ещё там проект не помню как называется я его называл &quot;КРАСНЫЕ ШАПОЧКИ&quot; совместное начинание организаций &quot;ПРЕКРАСНОЕ ДАЛЁКО&quot;, &quot;УМНЫЕ МАШИНЫ&quot; и &quot;ЧЁРНЫЙ ВОСХОД&quot;, суть его в том что они делали таких, блять, там даже не био роботы, там био тракторы какие-то, из детей, проводили им на мозгу какие-то сложные операции после чего их заставляли носить красные шапочки, они и в духовном и в базовом мире носили красные шапочки, я их до жути боялся, пионерский галстук ладно иногда буду носит но не да бог мне предложат надеть красную шапочку. У проекта были противники и его вроде как закрыли, сейчас юнармия рф это судя по всему возрождение того проекта.</p>
+<p>Самая крутая организация,известная мне, в которую все стремятся войти это КОН. Тот кто из кона может нападать на любого, на того кто и КОНА нападать нельзя от него можно только защищаться. В КОН входят по приглашению за достижения в духовном мире. Такая известная социальная сеть в рф В_КОН_ТАКТ в ней все недожорки мечтающие попасть в КОН держат свои странички.</p>
+<p>Вы думаете что живёте в своей квартире в городе и вы в безопасности? Поставьте в квартире камеру, только скрытую, которая писала бы в высоком разрешении со звуком при открытии входной двери, к вам в квартиру обязательно 1-2 раза пока вы там живёте придут люди они могут зайти могут не заходит остаться в подъезде стоять, к вам придут поздно вечером часов в 11-12, скорее всего среди тех кто придёт будет кто-то вам знакомый что бы вы открыли дверь и вас спросят ОРГАНИЗАЦИЯ? и все ваши домашние что-то скажут: &quot;ДОБРЫЕ ДЕЛА&quot;, &quot;ТИШИНА&quot;, &quot;ХОРОШИЕ ЛЮДИ&quot;, &quot;ПАУТИНА&quot;... они назовут свою общественную организацию.</p>
+<p>В базовом мире в начальниках в гос организаций стоят как правило люди из духовной организации &quot;ВАЖНЫЕ ЛЮДИ&quot;.</p>
+<p>К вам в квартиру могут заходить пока вы отсутствуете, откроют дверь домашние, голосом им сотрут память они будут смутно помнить что произошло. Там даже как в фильме люди в чёрном ни чем в глаза светить не надо, светят в глаза когда нужно стереть образ какого-то человека которого вы не должны были видеть. Сейчас время изменилось, технологии шагнули далеко вперёд, скрытая камера в квартире. Только держите это в тайне чтоб никто не знал что у вас в квартире камеры, домашним скажите что это тайна. ТИШИНА ЭТО ТАЙНА.</p>
+<p>ТИШИНА такая организация которая работает с тайной. Знаете такой жест к губам прикладывается палец и звук такой издают &quot;тсссссссс&quot;. Он означает - РАБОТАЕТ ТИШИНА! Тишина слушает: про себя сказанные слова, мысли, сказанное во снах людей, их настроения, чаяния и устремления... У вас будет такое состояние когда в голове услышите так называемый стрекот цикад, &quot;тсссссссс&quot; и имитирует этот самый стрекот цикад. Когда работает тишина себя надо вести тихо и не разговаривать.</p>
+<p>Почему же почему же из кгб фсб бежали предатели за границу если всех и всё слушают знают кодируют и контролируют, потому что всем насрать (ну не очень сильно, слегка) на базовый грубоматериальный мир, война идёт за души людей а там свои этические правила. Вы думаете ссср сам развалился, о его распаде было известно лет за 25, его даже специально разваливали спец команда под началом ТЕМНОГО ЛОРДА который контролировал чуть ли не всё кгб. Сегодня одна страна завтра другая главное что те кто реально управляют всегда на вершине. Вот сокращение размеров вотчины, подконтрольных территорий, тема для них болезненная.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="sleap.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="lang.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="sleap.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="lang.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

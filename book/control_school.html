@@ -1,0 +1,204 @@
+<!DOCTYPE HTML>
+<html lang="ru" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Страшная контрольная - Общая теория устройства и управления обществом</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="intro.html"><strong aria-hidden="true">1.</strong> Введение</a></li><li class="chapter-item expanded "><a href="base.html"><strong aria-hidden="true">2.</strong> Основные фигуры</a></li><li class="chapter-item expanded "><a href="sleap.html"><strong aria-hidden="true">3.</strong> Сон</a></li><li class="chapter-item expanded "><a href="org.html"><strong aria-hidden="true">4.</strong> Организации</a></li><li class="chapter-item expanded "><a href="lang.html"><strong aria-hidden="true">5.</strong> Язык ПОДА</a></li><li class="chapter-item expanded "><a href="death.html"><strong aria-hidden="true">6.</strong> Вас закодировали</a></li><li class="chapter-item expanded "><a href="family.html"><strong aria-hidden="true">7.</strong> Семья в рф</a></li><li class="chapter-item expanded "><a href="school.html"><strong aria-hidden="true">8.</strong> Средняя школа</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="after_school.html"><strong aria-hidden="true">8.1.</strong> После школы</a></li><li class="chapter-item expanded "><a href="control_school.html" class="active"><strong aria-hidden="true">8.2.</strong> Страшная контрольная</a></li></ol></li><li class="chapter-item expanded "><a href="in.html"><strong aria-hidden="true">9.</strong> Работа внутри страны</a></li><li class="chapter-item expanded "><a href="other.html"><strong aria-hidden="true">10.</strong> Россия и другие страны</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="b.html"><strong aria-hidden="true">10.1.</strong> Бiларусь</a></li><li class="chapter-item expanded "><a href="g.html"><strong aria-hidden="true">10.2.</strong> Германия</a></li><li class="chapter-item expanded "><a href="f.html"><strong aria-hidden="true">10.3.</strong> Франция</a></li><li class="chapter-item expanded "><a href="c.html"><strong aria-hidden="true">10.4.</strong> Китай</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Общая теория устройства и управления обществом</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h3 id="Страшная-контрольная"><a class="header" href="#Страшная-контрольная">Страшная контрольная</a></h3>
+<p>Я очутился сидящим за партой, шла контрольная работа в классе, мля, опять, задолбали уже, институт закончил, пару лет как работаю. Это что-то была тяжёлая ситуация, на меня навалилась тяжесть тянуло упасть на стол парты головой и отключиться уснуть. Я собрался с силами нашёл каналы по которым должны были поступать данные они были заблокированы, странно кто их мог заблокировать, я уже собрался их разблокировать но заметил флаг рядом с ним там было сообщение которое я прочитал &quot;каналы НЕ разблокировать, СМЕРТЕЛЬНАЯ ОПАСНОСТЬ!&quot;, у сообщения был мой почерк будто я сам себе его оставил но ни как не мог вспомнить когда, вроде контрольная недавно началась а во внутреннем мире следы напряжения и это сообщение.</p>
+<p>Хорошо я был не простым, у меня были способности, я мог ходить во времени, ходить в будущее мне запретили но в прошлое то нет. И я ушёл в прошлое на несколько часов.</p>
+<p>Вот он я, я стою в коридоре школы и прекрасно себя чувсвую, вот там клас где проходили уроки математики, я вспомнил что я делаю тут, я просто брожу по школе и предаюсь воспоминаниям, тут дверь в класс где у нас были уроки по математике, и вдруг кто-то приводит толпу каких-то людей они начинают заходить в этот класс и у меня возникает идея заглянуть туда, я заглядываю и, дёрнуло же меня, захожу с ними в класс и сажусь за место где я всегда сидел, вокруг чуваки какие-то мне не знакомые. И тут вдруг заходит тройка: в центре тётка коренастая похожая на коммисара по бокам от неё стройные на две головы выше неё и моложе раза в два мужика, толи ассистенты толи охрана. Они все втроём выходят к доске на место препода и она заявляет &quot;объявляется проведение страшной контрольной работы&quot;. Я подумал вначале что ослышался &quot;важной контрольной работы&quot;. Тетка продолжала вещать &quot;Идет загрузка кода&quot; ... &quot;Один&quot;... &quot;Идет контрольная работа, Выходить из класса запрещено!&quot; ... &quot;Два&quot; ... &quot;Идёт контрольная работа, Вставать с места запрещено!&quot; ... &quot;Три&quot;... &quot;Идёт контрольная работа, Смотреть по сторонам запрещено!&quot; ... &quot;Четыре&quot; ... &quot;Идёт контрольная работа, Отвлекаться запрещено!&quot; ... &quot;Загрузть данные, стереть память!&quot; ... я пугаюсь последней команде и успеваю только сказать просебя в уме защиту &quot;УКРЕПИТЬ ПАМЯТЬ&quot;, понимаю что это что-то не то, на заданиях команду &quot;СТЕРЕТЬ ПАМЯТЬ&quot; не дают, получается работают против меня, успеваю отследить канал даных, обнаруживаю помимо мусора там СТРАШНЫЙ КОД, выставляю самую сильную блокировку и флаг с сообщением, и уже в следующий миг меня лишают памяти её будто сдувает хлопком. И этот самый миг стал началом &quot;сна&quot;. Я очутился сидящим за партой, шла контрольная работа в классе...</p>
+<p>Я очутился сидящим за партой, шла контрольная работа в классе, мля опять, задолбали уже, институт закончил, пару лет как работаю. Это что-то была тяжёлая ситуация, на меня навалилась тяжесть тянуло упасть на стол парты головой и отключиться уснуть. Я собрался с силами нашёл каналы по которым должны были поступать данные они были заблокированы, странно кто их мог заблокировать, я уже собрался их разблокировать но заметил флаг рядом с ними там было сообщение которое я прочитал &quot;каналы НЕ разблокировать, СМЕРТЕЛЬНАЯ ОПАСНОСТЬ!&quot;, у сообщения был мой почерк будто я сам себе его оставил но ни как не мог вспомнить когда, вроде контрольная недавно началась а во внутреннем мире следы напряжения и это сообщение.</p>
+<p>Хорошо я был не простым, у меня были способности, я мог ходить во времени, в это время заметил что я уже работаю во времени, на месте не стою, двигаюсь из прошлого, примерно через минут десять ожидается возвращение в точу... Работу во времени надо прекрывать, я не стал дёргаться, дождался своего возвращения, память восстановилась, удвоились силы. Сломал первый код &quot;Отвлекаться запрещено!&quot; стал наблюдать за тем что происходит, тётка сразу после завершения своей речи направилась к выходу из класса и судя по всему ушла, а мужики стали ходить между рядов и наблюдать, периодически переговариваясь друг с другом, кто-то впереди меня сидящий вырубился и упал на парту, подошли мужики сказали &quot;Ещё одна грязь&quot; взяли под руки и утащили куда-то из класса. ...</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="after_school.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="in.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="after_school.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="in.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

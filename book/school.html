@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+<html lang="ru" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Средняя школа - Общая теория устройства и управления обществом</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="intro.html"><strong aria-hidden="true">1.</strong> Введение</a></li><li class="chapter-item expanded "><a href="base.html"><strong aria-hidden="true">2.</strong> Основные фигуры</a></li><li class="chapter-item expanded "><a href="sleap.html"><strong aria-hidden="true">3.</strong> Сон</a></li><li class="chapter-item expanded "><a href="org.html"><strong aria-hidden="true">4.</strong> Организации</a></li><li class="chapter-item expanded "><a href="lang.html"><strong aria-hidden="true">5.</strong> Язык ПОДА</a></li><li class="chapter-item expanded "><a href="death.html"><strong aria-hidden="true">6.</strong> Вас закодировали</a></li><li class="chapter-item expanded "><a href="family.html"><strong aria-hidden="true">7.</strong> Семья в рф</a></li><li class="chapter-item expanded "><a href="school.html" class="active"><strong aria-hidden="true">8.</strong> Средняя школа</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="after_school.html"><strong aria-hidden="true">8.1.</strong> После школы</a></li><li class="chapter-item expanded "><a href="control_school.html"><strong aria-hidden="true">8.2.</strong> Страшная контрольная</a></li></ol></li><li class="chapter-item expanded "><a href="in.html"><strong aria-hidden="true">9.</strong> Работа внутри страны</a></li><li class="chapter-item expanded "><a href="other.html"><strong aria-hidden="true">10.</strong> Россия и другие страны</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="b.html"><strong aria-hidden="true">10.1.</strong> Бiларусь</a></li><li class="chapter-item expanded "><a href="g.html"><strong aria-hidden="true">10.2.</strong> Германия</a></li><li class="chapter-item expanded "><a href="f.html"><strong aria-hidden="true">10.3.</strong> Франция</a></li><li class="chapter-item expanded "><a href="c.html"><strong aria-hidden="true">10.4.</strong> Китай</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Общая теория устройства и управления обществом</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h3 id="Средняя-школа"><a class="header" href="#Средняя-школа">Средняя школа</a></h3>
+<p>В детском саду ещё индивидуальный подход там массово не кодирую. А школа это не то место где учат. Где-то в 3 классе я услышал ГОЛОС АНГЕЛА в духовном мире (то есть когда дети в базовом мире приходят со школы где провели большую часть дня и лягли спать ночью им снится школа) <code>&quot;ОДИН! ... ДВА! ... ТРИ! ... ЧЕТЫРЕ! ... ВЫ НЕ СВОБОДНЫ! ВЫ НЕ СВОБОДНЫ! ...&quot;</code> это системный код, я понял что начали кодировать, вначале я обежал весь район кодировали во всех школах и во всех гос учреждениях какой-то дом советов и ще какое-то здание во всех гос зданиях где собирается много людей. поэтому я вернулся в свою среднюю школу вариант с переводом в другую школу отпал, я нашёл источник голоса - учительская в спортзале, там было два мужика помню как они мне обяъсняли я спрашиваю как в кабинет передаёте голос по проводам ? а они мне нет по волне. я про волны ничего не знал. Все говорю им - человека кодировать нельзя сворачивайте свою шарманку и съёбывайте, пришлось вломить одному я бы их обоих запиздел, прибежала тётка кто у нас тут такой талантливый голос ангела услышал короче она мне дала затычки для ушей типа в уши вставь и всё кодироваться не будешь. Так я попал к кодировщикам.</p>
+<ul>
+<li>Ангелы в небе. дети до 7-8 лет (вам не нравятся чужие маленькие дети это может быть не спроста)</li>
+<li>Ангелы на земле. дети до института</li>
+<li>Ангелы в организации. взрослые</li>
+</ul>
+<p>Есть такой тип людей в школе это в основном тётки: коренастые, бошкатые (большой размер головы - по шапке узнать можете, у женщин из-за причёски бывает сложно на глаз определить размер головы), с плотным таким телом, тихие(не шумные) ходят внутрь себя, зачастую, смотрят, что-то там рассматривают, и у них смуглая кожа, не загорелая а вот, пипец, смуглая слегка. Это кодировщики у которых отработка за черные дела и ведение чёрной жизни (убийства людей), они работают на государство, сторонитесь их. Если есть возможность лучше в другой класс перевестись. Я их определял как комисарши из расстрельных троек вот надень на неё кажанку вылитая коммисарша.</p>
+<p>Так же внимание на училок физкультуры смуглых (в школе с детьми все тётки были). База с волновой аппаратурой не спроста в учительской спортзала была. Они как правило будут вас учить максимум пол года во 2-3-4-может5 классе.</p>
+<p>Есть такие люди с большой головой и формой такой вытянутой, тыквоголовыми их называют, они самые главные командуют всеми.</p>
+<p>Если подымают руку как в фашистском приветсвии это приветсвие человека, если вы человек и у вас генетика человека у вас инстинк будет срабатывать вас будет порывать автоматом в ответ тоже руку поднять, это как коленочный рефлекс.</p>
+<p>Когда вы начнёте учиться в классе 5-6 вас кто нибудь, возможно одноклассник, будет спрашивать какой у тебя любимый предмет, если у вас не будет поворачиваться язык сказать что мой любимый предмет такой-то, это не спроста ), учителя на всех предметах кодируют, если скажете что предмет ваш любимый такой-то рухнет ваша защита от кодирования на этом предмете.</p>
+<p>Вообще все школы государственные. Я учился в ссср там вообще людей за косой взгляд и чих расстреливали.</p>
+<p>К нам в 1 классе пришла делегация они даже белые халаты одевать не стали, нас всех вывели из класса и построили в шеренгу в коридоре возле класса, тётки прошли вдоль всей шеренги поили с ложечки детей чем то и рисовали на лбу у некоторых кисточкой обмокнутой в жидкость кресты, тех кто не хотел пить с ложечки хлестали по щекам и дети подчинялись.</p>
+<p>Так же неоднократно (раз5-6) 1-3 класс делали уколы в руку выводили из класса строили в коридоре в шеренгу приказывали закатать рукав проходили и делали уколы, что за уколы хз животноводы скотине не объясняют.</p>
+<p>Была ещё такая херня в пионерской комнате поставили кабинку похожую на кабинку для моментальных фотографий обитую изнутри всем чёрным и с чёрной шторкой, туда водили детей 1 класс прям с урока какой-то мужик забирал заводил в кабинку и заставлял там сидеть 5 минут. (я знаю что это такое и лучше туда не попадать)</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="family.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="after_school.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="family.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="after_school.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

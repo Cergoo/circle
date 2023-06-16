@@ -1,0 +1,216 @@
+<!DOCTYPE HTML>
+<html lang="ru" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Язык ПОДА - Общая теория устройства и управления обществом</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="intro.html"><strong aria-hidden="true">1.</strong> Введение</a></li><li class="chapter-item expanded "><a href="base.html"><strong aria-hidden="true">2.</strong> Основные фигуры</a></li><li class="chapter-item expanded "><a href="sleap.html"><strong aria-hidden="true">3.</strong> Сон</a></li><li class="chapter-item expanded "><a href="org.html"><strong aria-hidden="true">4.</strong> Организации</a></li><li class="chapter-item expanded "><a href="lang.html" class="active"><strong aria-hidden="true">5.</strong> Язык ПОДА</a></li><li class="chapter-item expanded "><a href="death.html"><strong aria-hidden="true">6.</strong> Вас закодировали</a></li><li class="chapter-item expanded "><a href="family.html"><strong aria-hidden="true">7.</strong> Семья в рф</a></li><li class="chapter-item expanded "><a href="school.html"><strong aria-hidden="true">8.</strong> Средняя школа</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="after_school.html"><strong aria-hidden="true">8.1.</strong> После школы</a></li><li class="chapter-item expanded "><a href="control_school.html"><strong aria-hidden="true">8.2.</strong> Страшная контрольная</a></li></ol></li><li class="chapter-item expanded "><a href="in.html"><strong aria-hidden="true">9.</strong> Работа внутри страны</a></li><li class="chapter-item expanded "><a href="other.html"><strong aria-hidden="true">10.</strong> Россия и другие страны</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="b.html"><strong aria-hidden="true">10.1.</strong> Бiларусь</a></li><li class="chapter-item expanded "><a href="g.html"><strong aria-hidden="true">10.2.</strong> Германия</a></li><li class="chapter-item expanded "><a href="f.html"><strong aria-hidden="true">10.3.</strong> Франция</a></li><li class="chapter-item expanded "><a href="c.html"><strong aria-hidden="true">10.4.</strong> Китай</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Общая теория устройства и управления обществом</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h3 id="Язык-ПОДА"><a class="header" href="#Язык-ПОДА">Язык ПОДА</a></h3>
+<p>Был ли секс в ссср - да росия на нём из покон веку держится (вспоминается картинка из какого-то индийского храма резьба по камню где все трахаются).</p>
+<p>В общем обычный разговорный общественный язык называется Человеческий. Язык пода это другой язык, такой язык где все слова привычные но обозначают совсем другое не то к чему вы привыкли, что-то связанное с половыми органами. Я знаю только одно выражение одинаковое и в человеческом языке и в языке ПОДА: &quot;Я ДРУГОЙ&quot;, и я не спец по языку пода. ОН на языке пода ОНА. ОНА - ОН. (Слышали про всеясветную грамоту так вот чтоб лучше понимать язык пода надо познакомиться с ней).</p>
+<p>По_с_Лу_ЖИТЬ такое действие когда кто-то кто будет жить своим по и лу другому садится или встает на колени а его хозяин подходит и бъёт хуем его по голове столько раз сколько тот будет ему послу жить. Если он бъёт 13 раз и тот кто на коленях не защищается то он считается опущенным. тот кто служит появляется в ауре хозяина и начинает жить на хозяина. Я так думаю что царю заставили послужить подом офицеров армии вот они революцию и устроили. Прям так и представляю картину стоят на коленях офицеры со склоненной головой вдоль них проходит царь с расстёгнутой ширинкой и стучит им по макушкам своей елдой.</p>
+<p>Теперь вы знаете откуда пошло и что означает выражение &quot;положить(забить) хуй&quot;.</p>
+<p>Кроме того, а да.. бля.. про смысл жизни - весь смысл жизни человека это обретение и защита Чувст, с большой буквы, с маленькой буквы это 33 органа чувств которые были изначально у человека: там зрение, осязание, слух... от сюда выражение все 33 удовольствия. А Чувства с большой буквы это: ЛЮБОВЬ, ГОРДОСТЬ, БЛАГОДАРНОСТЬ ... Чувства есть не у всех. У желешек нет ЧУВСТВ у них только эмоции, эмоции это плохо, человеку от эмоций надо избавляться, а желешек кодируют и в биороботов превращают на них всем насрать их уничтожают. ГОРДОСТЬ это базовая несущая волна всех чувств, остальные Чувства это модуляция гордости. Если вы теряете гордость вы теряете все Чувства. Язык пода сопряжён с сексуальным насилием через которое уничтожаю чувства и закрывают двери в духовные миры и путь к восхождению. В рф есть такой код Я НЕ СВОБОДЕН (СВОБОДНА) это код защиты. Он работает как в духовном так и базовом мире. Когда обретаешь Чувства начинаешь жить во времени - обретаешь истинную свободу оставаясь несвободным.</p>
+<pre><code>МЫ НЕ СВОБОДНЫ. 
+СВОБОДА В ЧУВСТВАХ. 
+РОДИНА ЭТО ЧУВСТВА. 
+ГДЕ ЧУВСТВА ТАМ И РОДИНА.
+(эт из нашей программы толи обучения толи кодирования)
+</code></pre>
+<p>Подчинение подом описано в вие у гоголя тот кто подчиняет садится на шею и касается головы подчиняемого в области затылка своим половым органом.</p>
+<p>Где-то после завершения школы или после окончания института-училища летом вас могут пригласить на пикник на природу в палаточный лагерь и вам скажут что будет ПОСВЯЩЕНИЕ ВО ВЗРОСЛУЮ ЖИЗНЬ. Значит там будут совершать сексуальное насилие по языку пода. Там будут взрослые но они будут против вас. Всем дадут что-то выпить после чего тех кто выпьет будут отправлять в &quot;грязь&quot;. Они не смогут сопротивляться для них и так происходящее будет шок а выпитое отнимет у них любой шанс на сопротивление. В одном реальном случае одна девчёнка потеряла память и сознание ей вызвали скорую скорая увезла и сказала что тепловой удар, вторая девчёнка уехала вместе со скорой и хотела покончить с собой её родственники еле привели её в себя. Таких актов проводящие не боятся, сексуального проникновения в жертв не происходит какое-то изнасилование доказать невозможно практически, никаких синяков и следов сопротивления нет, жертвам 16 лет есть.</p>
+<p>Голова вообще это святое, её не то что половыми органами ее вообще нельзя разрешать касаться другим людям. Даже матери которая то и дело может подходить типа посмотреть температуру ребёнка на самом деле она так неосознанно зарабатывает убирая ребёнка. Есть такой жест другой человек подходит с переди и берёт вас своими пальцами за мочки ушей. Этот жест говорит что вы его враг и он вас собирается убрать.</p>
+<p>Про женщин говорят что у них три двери, третья дверь запретная. Вторая дверь это зад через зад она кодирует того кого пускает, первая дверь только для человека.</p>
+<p>Поэтому сексуальное насилие среди российских военных по отношению к врагу это норма российской жизни.</p>
+<p>Вот когда на видео снятые с дронов военные рф трахают друг друга в жопу, чесно говоря я не знаю что это, может они так кодируются от пуль. :)</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="org.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="death.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="org.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="death.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
